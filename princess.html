@@ -40,7 +40,6 @@
                       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" nav-item-index="0" href="#">Aladdin</a>
                         <a class="dropdown-item" nav-item-index="1" href="#">Alice In Wonderland</a>
-                        
                         <a class="dropdown-item" nav-item-index="3" href="#">Beauty and the Beast</a>
                         <a class="dropdown-item" nav-item-index="4" href="#">Brave</a>
                         <a class="dropdown-item" nav-item-index="5" href="#">Cinderella</a>
@@ -70,13 +69,16 @@
                           </li>
                     
                   </ul>
-                  <form class="form-inline my-2 my-lg-0">
+                     <form class="form-inline my-2 my-lg-0" autocomplete="off"> 
                       <!-- Search Princess Reference -->
                     <input id="princess-search" class="form-control mr-sm-2" type="search" placeholder="Princess Name" aria-label="Search">
-                    
                    
-                  </form>
-                  <ul id="search-results">
+                   
+                  </form> 
+
+            
+                  
+                <ul id="search-results">
                     
                     <li><a class="dropdown-item" nav-item-index="0" href="#">Jasmine</a></li>
                     <li><a class="dropdown-item" nav-item-index="1" href="#">Alice</a></li>
@@ -128,23 +130,28 @@
     
  
 
-         $(document).ready(function(){
-            $('#search-results li').hide();
-               $("#princess-search").on("keyup", function() {
-                    var value = $(this).val().toLowerCase();
-         $("#search-results li").filter(function() {
-            if($("a",this).text().toLowerCase().indexOf(value) > -1) {
-             $(this).show();
-            } else {
-             $(this).hide();
-            }
+    $(document).ready(function(){
+        $('#search-results li').hide();
+        $("#princess-search").on("keyup", function() {
+            var value = $(this).val().toLowerCase();
+            $("#search-results li").filter(function() {
+                if($("a",this).text().toLowerCase().indexOf(value) > -1) {
+                    $(this).show();
+                } else {
+                    $(this).hide();
+                }
 
-            if(value === "") {
-                $(this).hide();
-           }
-      });
-   });
-});   
+                if(value === "") {
+                    $(this).hide();
+                }
+            });
+        });
+
+        $('#search-results a').on("click",function(){
+        $("#princess-search").val(""); 
+        $('#search-results li').hide();  
+        });
+    });   
     </script>
 </body>
 <style>
