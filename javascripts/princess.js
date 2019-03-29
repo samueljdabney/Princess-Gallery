@@ -170,7 +170,7 @@ var data = {
 
 }
 
-
+//== target carousel items by movie reference names--//
 
 function renderCarousel(e){
     var Ind = null;
@@ -188,7 +188,7 @@ function renderCarousel(e){
     }else{
         Ind = e; 
     }
-    
+    //== target carousel items by movie reference names --//
     var carouselItems = document.getElementById('carousel-items');
     while(carouselItems.firstChild){
         carouselItems.removeChild(carouselItems.firstChild);
@@ -210,12 +210,12 @@ function renderCarousel(e){
         });
     
     
-    
+    //== Check to make sure click is working correctly--//
     console.log('the click is working');
 }
 
 
-
+   //== target carousel items by movie reference names with click function --//
 function init(){
     var nav_item = document.querySelectorAll('[nav-item-index]');
      for(let navI in nav_item){
